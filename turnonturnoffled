@@ -1,0 +1,31 @@
+Arduino code::
+int x = 2;
+void setup() 
+{
+Serial.begin(9600);
+}
+
+void loop() 
+{
+Serial.println(x);
+x++;
+delay(800);
+}
+
+`````````````````````````````````````````````````````````
+
+Python code:-
+~~~~~~~~~
+import serial
+from visual import *
+
+data = serial.Serial(''your com port',your baud rate)
+
+obj = cylinder(length = 6,radius =0.6,color = color.red,pos = (-3,0,0))
+
+while(True):
+    if(data.isWaiting()!=0):
+        k = data.readline()
+        y = float(k)
+        obj.length = y
+        print y
